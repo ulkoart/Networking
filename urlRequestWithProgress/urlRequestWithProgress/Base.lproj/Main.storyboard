@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="urlRequestWithProgress" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Download progress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cOf-Ve-mEG">
+                                <rect key="frame" x="113" y="20" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eh6-tF-5T7">
+                                <rect key="frame" x="135" y="313" width="105" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Download"/>
+                                <connections>
+                                    <action selector="downloadButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="76O-K8-KeK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eqk-6J-v5e">
+                                <rect key="frame" x="145" y="161" width="85.5" height="37.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dc9-eo-h0M">
+                                <rect key="frame" x="62.5" y="384.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="6Tr-sH-85i"/>
+                                    <constraint firstAttribute="width" constant="250" id="o6w-4e-3FH"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Eqk-6J-v5e" firstAttribute="top" secondItem="cOf-Ve-mEG" secondAttribute="bottom" constant="120" id="5vp-8G-tNA"/>
+                            <constraint firstItem="cOf-Ve-mEG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="8Fi-hW-UZW"/>
+                            <constraint firstItem="cOf-Ve-mEG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ah-ts-8Jh"/>
+                            <constraint firstItem="dc9-eo-h0M" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fz2-hy-yfZ"/>
+                            <constraint firstItem="Eh6-tF-5T7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Uf1-Xt-DIo"/>
+                            <constraint firstItem="Eh6-tF-5T7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="W4h-C8-nww"/>
+                            <constraint firstItem="dc9-eo-h0M" firstAttribute="top" secondItem="Eh6-tF-5T7" secondAttribute="bottom" constant="30.5" id="dwH-rj-4Ow"/>
+                            <constraint firstItem="Eqk-6J-v5e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eE0-2X-cSN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="downloadButton" destination="Eh6-tF-5T7" id="17i-Hd-D0T"/>
+                        <outlet property="imageView" destination="dc9-eo-h0M" id="VaF-4a-9tX"/>
+                        <outlet property="progressLabel" destination="Eqk-6J-v5e" id="KGj-d7-3IQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
