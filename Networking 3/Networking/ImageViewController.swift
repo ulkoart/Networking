@@ -35,7 +35,6 @@ class ImageViewController: UIViewController {
     }
     
     func fetchDataWithAlamofire() {
-        
         AlamofireNetworkRequest.downloadImage(url: url) { (image) in
             
             self.activityIndicator.stopAnimating()
@@ -44,6 +43,21 @@ class ImageViewController: UIViewController {
     }
     
     func downloadImageWithProgress() {
+        AlamofireNetworkRequest.onProgress = {(progress) in
+            self.progressView.isHidden = false
+            self.progressView.progress = Float(progress)
+        }
         
+        AlamofireNetworkRequest.complited = {(complited) in
+            self.completedLabel.isHidden = false
+            self.completedLabel.text = complited
+        }
+        
+        AlamofireNetworkRequest.downloadImageWithProgress(url: largeImageUrl) { (image) in
+            self.completedLabel.isHidden = true
+            self.progressView.isHidden = true
+            self.activityIndicator.stopAnimating()
+            self.imageView.image = image
+        }
     }
 }
